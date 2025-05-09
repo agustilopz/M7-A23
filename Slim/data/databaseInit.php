@@ -49,7 +49,6 @@ $db->exec("INSERT INTO 'bands' ('name', 'description', 'members', 'genres', 'web
  'https://www.nirvana.com/',
  'https://www.impericon.com/cdn/shop/articles/20230912_nirvanajubilaeum_2_52c5ec1e-4a78-4f5a-b5f3-3b054e9cc10c.jpg?v=1740047327')");
 
-*/
 
 
 
@@ -57,15 +56,25 @@ $db->exec("INSERT INTO 'bands' ('name', 'description', 'members', 'genres', 'web
 $db->exec("ALTER TABLE bands ADD COLUMN video TEXT");
 
 // Actualitzar cada banda amb un enllaç de vídeo representatiu
-$db->exec("UPDATE bands SET video = 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ' WHERE name = 'Queen'"); // Bohemian Rhapsody
-$db->exec("UPDATE bands SET video = 'https://www.youtube.com/watch?v=CGj85pVzRJs' WHERE name = 'The Beatles'"); // Let It Be
-$db->exec("UPDATE bands SET video = 'https://www.youtube.com/watch?v=SGyOaCXr8Lw' WHERE name = 'The Rolling Stones'"); // Paint It Black
-$db->exec("UPDATE bands SET video = 'https://www.youtube.com/watch?v=6hzrDeceEKc' WHERE name = 'Oasis'"); // Wonderwall
-$db->exec("UPDATE bands SET video = 'https://www.youtube.com/watch?v=hTWKbfoikeg' WHERE name = 'Nirvana'"); // Smells Like Teen Spirit
-
-$db->close();
+$db->exec("UPDATE bands SET video = 'https://www.youtube.com/embed/fJ9rUzIMcZQ?si=QUUBWjfvMQnflS0d' WHERE name = 'Queen'"); // Bohemian Rhapsody
+$db->exec("UPDATE bands SET video = 'https://www.youtube.com/embed/CGj85pVzRJs?si=fMgsFZau5yQo-WHt' WHERE name = 'The Beatles'"); // Let It Be
+$db->exec("UPDATE bands SET video = 'https://www.youtube.com/embed/SGyOaCXr8Lw?si=YrZeZIOSxSal0Bzk' WHERE name = 'The Rolling Stones'"); // Paint It Black
+$db->exec("UPDATE bands SET video = 'https://www.youtube.com/embed/6hzrDeceEKc?si=sBjgBR4S3lAx1YUA' WHERE name = 'Oasis'"); // Wonderwall
+$db->exec("UPDATE bands SET video = 'https://www.youtube.com/embed/hTWKbfoikeg?si=N3UN43fp-xxWOo12' WHERE name = 'Nirvana'"); // Smells Like Teen Spirit
 
 
+// Afegir la nova columna 'video' a la taula
+$db->exec("ALTER TABLE bands ADD COLUMN songs TEXT");
+
+// Actualitzar cada banda amb un enllaç de vídeo representatiu
+$db->exec("UPDATE bands SET songs = 'https://open.spotify.com/artist/1dfeR4HaWDbWqFHLkxsg1d' WHERE name = 'Queen'"); // Bohemian Rhapsody
+$db->exec("UPDATE bands SET songs = 'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2' WHERE name = 'The Beatles'"); // Let It Be
+$db->exec("UPDATE bands SET songs = 'https://open.spotify.com/artist/22bE4uQ6baNwSHPVcDxLCe' WHERE name = 'The Rolling Stones'"); // Paint It Black
+$db->exec("UPDATE bands SET songs = 'https://open.spotify.com/artist/2DaxqgrOhkeH0fpeiQq2f4' WHERE name = 'Oasis'"); // Wonderwall
+$db->exec("UPDATE bands SET songs = 'https://open.spotify.com/artist/6olE6TJLqED3rqDCT0FyPh' WHERE name = 'Nirvana'"); // Smells Like Teen Spirit
+
+
+*/
 
 $db->close();
 
